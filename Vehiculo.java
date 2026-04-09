@@ -8,6 +8,10 @@ public class Vehiculo {
         velocidad = velocidad + 10;
     }
 
+    public void frenar() {
+        velocidad = velocidad - 10;
+    }
+
 
     public void mostrarEstado() {
         System.out.println("Su auto es un " + marca);
@@ -24,9 +28,12 @@ public class Vehiculo {
 
 
         vehic1.acelerar();
+        vehic1.frenar();
         vehic1.mostrarEstado();
 
 
+
+        System.out.println("El auto ha frenado ");
     }
 
 }
