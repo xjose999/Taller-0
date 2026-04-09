@@ -9,4 +9,17 @@ public class Mascota {
         System.out.println("Su mascota tiene " + edad);
     }
 
+    public static void main (String[] args) {
+
+        Mascota mascota = new Mascota();
+        mascota.nombre = "Firulais";
+        mascota.especie = "Coyote";
+        mascota.edad = 5;
+
+        mascota.edad = 7;
+
+        mascota.mostrarMascota();
+
+    }
+
 }
