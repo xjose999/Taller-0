@@ -1,41 +1,26 @@
 public class CuentaBancaria {
-    int numero;
-    double saldo;
+    String numero;
     String titular;
+    double saldo;
 
-    public void mostrarCuenta() {
-        System.out.println("Titular: " + titular + " | Saldo: $" + saldo);
+
+    public CuentaBancaria(String numero, String titular, double saldoInicial) {
+        this.numero = numero;
+        this.titular = titular;
+        this.saldo = saldoInicial;
     }
 
-    public void consignar(double valor) {
-        saldo = saldo + valor;
-        System.out.println("Consignaste: $" + valor);
+    public void mostrarEstado() {
+
+        System.out.println("Cuenta No: " + numero);
+        System.out.println("Titular: " + titular);
+        System.out.println("Saldo Actual: $" + saldo);
     }
 
-
-    public void retirar(double valor) {
-        if (valor <= saldo) {
-            saldo = saldo - valor;
-            System.out.println("Retiro exitoso de: $" + valor);
-        } else {
-            System.out.println("Error: Saldo insuficiente. Intentaste retirar $" + valor + " pero solo tienes $" + saldo);
-        }
-    }
-
-    public static void main (String[] args) {
-        CuentaBancaria cuenta1 = new CuentaBancaria();
-        cuenta1.numero = 9935247;
-        cuenta1.saldo = 100000.0;
-        cuenta1.titular = "José Daniel Ballesteros";
-
-        cuenta1.mostrarCuenta();
+    public static void main(String[] args) {
+        CuentaBancaria miCuenta = new CuentaBancaria("750-25200-40", "José Daniel Ballesteros", 50000.0);
 
 
-        cuenta1.retirar(40000.0);
-
-
-        cuenta1.retirar(70000.0);
-
-        cuenta1.mostrarCuenta();
+        miCuenta.mostrarEstado();
     }
 }
