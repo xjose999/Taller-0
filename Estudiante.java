@@ -14,11 +14,8 @@ public class Estudiante {
         System.out.println("Semestre: " + semestre + "°");
     }
 
-
-    public void cambiarSemestre(int nuevoSemestre) {
-        semestre = nuevoSemestre;
-        System.out.println(">>> El semestre ha sido actualizado a: " + semestre + "°");
-    }
+    //Aquí hay 3 objetos creados, comparten los mismos atributos, el metodo y se diferencian en los datos que tienen
+    //cada uno
 
     public static void main (String[] args) {
         Estudiante est1 = new Estudiante();
@@ -26,9 +23,21 @@ public class Estudiante {
         est1.codigo = "7502520040";
         est1.semestre = 2;
 
+        Estudiante est2 = new Estudiante();
+        est2.nombre = "Luis Alfonso Dominguez";
+        est2.codigo = "7502520041";
+        est2.semestre = 3;
+
+        Estudiante est3 = new Estudiante();
+        est3.nombre = "Juan Daniel Orozco";
+        est3.codigo = "7502520042";
+        est3.semestre = 1;
+
+
+
 
         est1.mostrarInfo();
-        est1.cambiarSemestre(3);
-        est1.mostrarInfo();
+        est2.mostrarInfo();
+        est3.mostrarInfo();
     }
 }
