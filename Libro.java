@@ -3,21 +3,33 @@ public class Libro {
     String genero;
 
 
-    public Libro(String nombreInicial, String generoInicial) {
-        nombre = nombreInicial;
-        genero = generoInicial;
+    public Libro() {
+        this.nombre = "Pendiente";
+        this.genero = "General";
+    }
+
+
+    public Libro(String nombre, String genero) {
+        this.nombre = nombre;
+        this.genero = genero;
     }
 
     public void mostrarInfo() {
-        System.out.println("Libro: " + nombre);
-        System.out.println("Género: " + genero);
+        System.out.println("Libro: " + nombre + " | Género: " + genero);
     }
 
     public static void main(String[] args) {
 
-        Libro miLibro = new Libro("Don Quijote", "Clasico");
+        Libro libroVacio = new Libro();
 
 
-        miLibro.mostrarInfo();
+        Libro libroConDatos = new Libro("El resplandor", "Terror");
+
+
+        System.out.println(" Objeto con Constructor Vacío ");
+        libroVacio.mostrarInfo();
+
+        System.out.println("\n Objeto con Constructor con Parámetros ");
+        libroConDatos.mostrarInfo();
     }
 }
