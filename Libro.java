@@ -17,11 +17,14 @@ public class Libro {
     }
 
     public static void main(String[] args) {
-        Libro original = new Libro("Cien años de soledad", "Realismo Mágico");
+        Libro original = new Libro("El resplandor", "Terror");
 
         Libro copia = new Libro(original);
 
+        System.out.println("Datos del original:");
         original.mostrarInfo();
+
+        System.out.println("Datos de la copia:");
         copia.mostrarInfo();
     }
 }
