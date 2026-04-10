@@ -11,16 +11,19 @@ public class CuentaBancaria {
     }
 
     public void mostrarEstado() {
-
-        System.out.println("Cuenta No: " + numero);
-        System.out.println("Titular: " + titular);
-        System.out.println("Saldo Actual: $" + saldo);
+        System.out.println("Titular: " + titular + " | No. Cuenta: " + numero + " | Saldo: $" + saldo);
     }
 
     public static void main(String[] args) {
-        CuentaBancaria miCuenta = new CuentaBancaria("750-25200-40", "José Daniel Ballesteros", 50000.0);
+
+        CuentaBancaria cuenta1 = new CuentaBancaria("1001", "José Daniel Ballesteros", 150000.0);
+        CuentaBancaria cuenta2 = new CuentaBancaria("1002", "Andrés Felipe Castro", 85000.50);
+        CuentaBancaria cuenta3 = new CuentaBancaria("1003", "Mariana Lucía Vélez", 210000.0);
 
 
-        miCuenta.mostrarEstado();
+        System.out.println(" Reporte de Cuentas Bancarias ");
+        cuenta1.mostrarEstado();
+        cuenta2.mostrarEstado();
+        cuenta3.mostrarEstado();
     }
 }
