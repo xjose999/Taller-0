@@ -3,10 +3,22 @@ public class Producto {
     int stock;
     int precio;
 
+
     public void mostrarProducto() {
-        System.out.println("Su producto es " + nombre);
-        System.out.println("En stock hay " + stock);
-        System.out.println("Su producto tiene un valor de " + precio);
+        System.out.println("---------------------------");
+        System.out.println("Su producto es: " + nombre);
+        System.out.println("En stock hay: " + stock);
+        System.out.println("Su producto tiene un valor de: " + precio);
+    }
+
+
+    public void vender(int cantidad) {
+        if (cantidad <= stock) {
+            stock = stock - cantidad;
+            System.out.println("Venta realizada: " + cantidad + " unidades de " + nombre);
+        } else {
+            System.out.println("Error: No hay suficiente stock de " + nombre + ". Intento de venta: " + cantidad + " | Disponible: " + stock);
+        }
     }
 
     public static void main (String[] args) {
@@ -16,17 +28,20 @@ public class Producto {
         product1.stock = 60;
         product1.precio = 200;
 
+
         Producto product2 = new Producto();
         product2.nombre = "Juguete Barbie";
         product2.stock = 25;
         product2.precio = 250;
 
-        Producto product3 = new Producto();
-        product3.nombre = "Juguete HotWheels";
-        product3.stock  = 320;
-        product3.precio = 5;
 
+
+
+        product1.vender(10);
         product1.mostrarProducto();
+
+
+        product2.vender(30);
         product2.mostrarProducto();
     }
 }
