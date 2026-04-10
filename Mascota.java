@@ -4,22 +4,32 @@ public class Mascota {
     int edad;
 
     public void mostrarMascota() {
-        System.out.println("Su mascota se llama " + nombre);
-        System.out.println("Su mascota es de raza " + especie);
-        System.out.println("Su mascota tiene " + edad);
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Especie: " + especie);
+        System.out.println("Edad: " + edad + " años");
+    }
+
+
+    public void cumplirAnios() {
+
+        edad = edad + 1;
+        System.out.println("¡Feliz cumpleaños " + nombre + "!");
     }
 
     public static void main (String[] args) {
 
-        Mascota mascota = new Mascota();
-        mascota.nombre = "Firulais";
-        mascota.especie = "Coyote";
-        mascota.edad = 5;
+        Mascota mascota1 = new Mascota();
+        mascota1.nombre = "Firulais";
+        mascota1.especie = "Perro";
+        mascota1.edad = 3;
 
-        mascota.edad = 7;
 
-        mascota.mostrarMascota();
+        mascota1.mostrarMascota();
 
+
+        mascota1.cumplirAnios();
+
+
+        mascota1.mostrarMascota();
     }
-
 }
