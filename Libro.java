@@ -2,19 +2,20 @@ public class Libro {
     String nombre;
     String genero;
 
-    public Libro() {
-        nombre = "Sin título";
-        genero = "Sin género";
+
+    public Libro(String nombreInicial, String generoInicial) {
+        nombre = nombreInicial;
+        genero = generoInicial;
     }
 
     public void mostrarInfo() {
-        System.out.println("Libro: " + nombre + " | Género: " + genero);
+        System.out.println("Libro: " + nombre);
+        System.out.println("Género: " + genero);
     }
 
     public static void main(String[] args) {
-        Libro miLibro = new Libro();
-        miLibro.nombre = "Don Quijote";
-        miLibro.genero = "Clásico";
+
+        Libro miLibro = new Libro("Don Quijote", "Clasico");
 
 
         miLibro.mostrarInfo();
