@@ -3,12 +3,6 @@ public class Producto {
     int stock;
     int precio;
 
-    public Producto() {
-        this.nombre = "Nuevo";
-        this.stock = 0;
-        this.precio = 0;
-    }
-
     public Producto(String nombre, int stock, int precio) {
         this.nombre = nombre;
         this.stock = stock;
@@ -24,8 +18,10 @@ public class Producto {
     }
 
     public static void main(String[] args) {
-        Producto p1 = Producto.crearProductoBasico("Teclado", 50000);
+        Producto p1 = Producto.crearProductoBasico("Mouse Gamer", 85000);
+        Producto p2 = Producto.crearProductoBasico("Alfombrilla", 15000);
 
         p1.mostrarInfo();
+        p2.mostrarInfo();
     }
 }
