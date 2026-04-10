@@ -2,16 +2,14 @@ public class Libro {
     String nombre;
     String genero;
 
-
-    public Libro() {
-        this.nombre = "Pendiente";
-        this.genero = "General";
-    }
-
-
     public Libro(String nombre, String genero) {
         this.nombre = nombre;
         this.genero = genero;
+    }
+
+    public Libro(Libro otroLibro) {
+        this.nombre = otroLibro.nombre;
+        this.genero = otroLibro.genero;
     }
 
     public void mostrarInfo() {
@@ -19,17 +17,11 @@ public class Libro {
     }
 
     public static void main(String[] args) {
+        Libro original = new Libro("Cien años de soledad", "Realismo Mágico");
 
-        Libro libroVacio = new Libro();
+        Libro copia = new Libro(original);
 
-
-        Libro libroConDatos = new Libro("El resplandor", "Terror");
-
-
-        System.out.println(" Objeto con Constructor Vacío ");
-        libroVacio.mostrarInfo();
-
-        System.out.println("\n Objeto con Constructor con Parámetros ");
-        libroConDatos.mostrarInfo();
+        original.mostrarInfo();
+        copia.mostrarInfo();
     }
 }
