@@ -1,31 +1,46 @@
-
 public class Estudiante {
     String nombre;
     String codigo;
     int semestre;
 
-    public void mostrarInfo() {
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Código: " + codigo);
-        System.out.println("Semestre: " + semestre + "°");
+
+    public Estudiante() {
+        this.nombre = "Sin nombre";
+        this.codigo = "0000000000";
+        this.semestre = 1;
     }
 
-    //Aquí hay 2 OBJETOS con el mismo valor en uno de los atributos pero distinto en los demás
-    public static void main (String[] args) {
+
+    public Estudiante(String nombre, String codigo) {
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.semestre = 1;
+    }
+
+
+    public Estudiante(String nombre, String codigo, int semestre) {
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.semestre = semestre;
+    }
+
+    public void mostrarInfo() {
+        System.out.println("Estudiante: " + nombre + " | Código: " + codigo + " | Semestre: " + semestre + "°");
+    }
+
+    public static void main(String[] args) {
+
         Estudiante est1 = new Estudiante();
-        est1.nombre = "José Daniel Ballesteros";
-        est1.codigo = "7502520040";
-        est1.semestre = 2;
-
-        Estudiante est2 = new Estudiante();
-        est2.nombre = "Luis Alfonso Dominguez";
-        est2.codigo = "7502520040";
-        est2.semestre = 3;
 
 
+        Estudiante est2 = new Estudiante("José Daniel", "7502520040");
 
+
+        Estudiante est3 = new Estudiante("Andrés Castro", "7502520041", 5);
+
+        System.out.println("Lista de Estudiantes");
         est1.mostrarInfo();
         est2.mostrarInfo();
-
+        est3.mostrarInfo();
     }
 }
