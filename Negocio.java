@@ -1,4 +1,7 @@
+
+//Esta es la clase
 public class Negocio {
+    //Estos sus atributos
     String producto;
     int cantidad;
 
