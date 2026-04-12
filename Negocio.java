@@ -1,26 +1,49 @@
 public class Negocio {
-    String nombreCliente;
-    String servicio;
-    double precio;
+    String producto;
+    int cantidad;
 
-    public void aplicarDescuento(double porcentaje) {
-        precio = precio - (precio * (porcentaje / 100));
+    public void vender() {
+        cantidad = cantidad - 1;
     }
 
-    public void imprimirFactura() {
-        System.out.println("Cliente: " + nombreCliente);
-        System.out.println("Servicio: " + servicio);
-        System.out.println("Total a pagar: $" + precio);
+    public void mostrarStock() {
+        System.out.println("Producto: " + producto + " | Unidades: " + cantidad);
     }
 
     public static void main(String[] args) {
-        Negocio miVenta = new Negocio();
+        // Objeto 1
+        Negocio obj1 = new Negocio();
+        obj1.producto = "Monitor";
+        obj1.cantidad = 10;
 
-        miVenta.nombreCliente = "Jose Daniel";
-        miVenta.servicio = "Mantenimiento PC";
-        miVenta.precio = 80000.0;
+        // Objeto 2
+        Negocio obj2 = new Negocio();
+        obj2.producto = "Teclado";
+        obj2.cantidad = 25;
 
-        miVenta.aplicarDescuento(10.0);
-        miVenta.imprimirFactura();
+        // Objeto 3
+        Negocio obj3 = new Negocio();
+        obj3.producto = "Mouse";
+        obj3.cantidad = 40;
+
+        // Objeto 4
+        Negocio obj4 = new Negocio();
+        obj4.producto = "Audifonos";
+        obj4.cantidad = 15;
+
+        // Objeto 5
+        Negocio obj5 = new Negocio();
+        obj5.producto = "Microfono";
+        obj5.cantidad = 8;
+
+        // Ejemplo de venta con el objeto 1
+        obj1.vender();
+
+        // Mostrar inventario de todos
+        obj1.mostrarStock();
+        obj2.mostrarStock();
+        obj3.mostrarStock();
+        obj4.mostrarStock();
+        obj5.mostrarStock();
     }
 }
