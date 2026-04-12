@@ -3,37 +3,31 @@ public class Vehiculo {
     String modelo;
     int velocidad;
 
-
-    public void acelerar() {
-        velocidad = velocidad + 10;
+    public Vehiculo(String marca, String modelo, int velocidad) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.velocidad = velocidad;
     }
 
-    public void frenar() {
-        velocidad = velocidad - 10;
+    public Vehiculo(Vehiculo otro) {
+        this.marca = otro.marca;
+        this.modelo = otro.modelo;
+        this.velocidad = otro.velocidad;
     }
-
 
     public void mostrarEstado() {
         System.out.println("Su auto es un " + marca);
         System.out.println("Su auto es modelo " + modelo);
-        System.out.println("Su auto va a " + velocidad + "por hora");
+        System.out.println("Su auto va a " + velocidad);
+        System.out.println("-------------------------");
     }
 
-    public static void main (String[] args) {
-        Vehiculo vehic1 = new Vehiculo();
-        vehic1.marca = "Su auto es un Mazda";
-        vehic1.modelo = "Su auto es modelo del 98";
-        vehic1.velocidad = 0;
+    public static void main(String[] args) {
+        Vehiculo original = new Vehiculo("Mazda", "2024", 80);
 
+        Vehiculo copia = new Vehiculo(original);
 
-
-        vehic1.acelerar();
-        vehic1.frenar();
-        vehic1.mostrarEstado();
-
-
-
-        System.out.println("El auto ha frenado ");
+        original.mostrarEstado();
+        copia.mostrarEstado();
     }
-
 }
