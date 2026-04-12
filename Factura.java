@@ -3,6 +3,10 @@ public class Factura {
     String cliente;
     double valor;
 
+    public void aplicarDescuento() {
+        valor = valor * 0.90;
+    }
+
     public void mostrarFactura() {
         System.out.println("Factura Nro: " + numero);
         System.out.println("Cliente: " + cliente);
@@ -16,6 +20,12 @@ public class Factura {
         miFactura.cliente = "José Daniel";
         miFactura.valor = 150000.0;
 
+        System.out.println("Antes del descuento:");
+        miFactura.mostrarFactura();
+
+        miFactura.aplicarDescuento();
+
+        System.out.println("Despues del descuento (10%):");
         miFactura.mostrarFactura();
     }
 }
